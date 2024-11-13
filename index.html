@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0b1d;
+            color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #BA55D3;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px; /* Espaço entre os flashcards */
+            width: 100%;
+            max-width: 1000px; /* Reduzindo a largura para proporção melhor */
+        }
+
+        .flashcard {
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            height: 250px; 
+            background-color: #1a1b3a; 
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.2);
+            color: #BA55D3;
+            text-align: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* Frente e verso do flashcard */
+        .flashcard .front, .flashcard .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        .flashcard .back {
+            transform: rotateY(180deg);
+            background-color: #14152b;
+            color: #BA55D3;
+            box-shadow: 0px 4px 12px rgba(255, 0, 255, 0.2);
+        }
+
+        
+        .flashcard:hover {
+            box-shadow: 0px 0px 20px rgba(57, 255, 20, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flashcards melhores séries e filmes da netflix</h1>
+
+   
+    <div class="flashcard-grid">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">Gente grande</div>
+            <div class="back">Gente grande é um filme de comédia. A morte do treinador de basquete de infância de velhos amigos reúne a turma no mesmo lugar que celebraram um campeonato anos atrás. Os amigos, acompanhados de suas esposas e filhos, descobrem que idade nao significa o mesmo que maturidade.</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">Outer banks</div>
+            <div class="back">O jovem Jonh B convoca seus melhores amigos para procurarem por um tesouro ligado ao desaparecimento de seu pai. Aos poucos, o grupo vai entrando em uma perigosa trama de segredos e perigos.</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">Brooklyn Nine-Nine</div>
+            <div class="back">Jake Peralta é um detetive brilhante e ao mesmo tempo imaturo, que nunca precisou se preocupar em respeitar as regras. Tudo muda quando um capitão exigente assume o comando de seu esquadrão e Jake deve aprender a trabalhar em equipe.</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">Pretty Little Liars</div>
+            <div class="back">Depois do desaparecimento de Alison. suas amigas adolescentes, agora no ensino médio, tem um novo desafio: desvendar mensagens anônimas, onde são ameaçadas de terem seus segredos expostos.</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">Teen Wolf</div>
+            <div class="back">Enquanto caminhava pela floresta em uma noite, Scott McCall encontrou uma criatura, onde levou uma mordida e desde então teve sua vida mudada para sempre. Ele é humano ou um lobisomem? Ou um pouco dois dois? Controlar as estranhas necessidades que agora sente é a parte mais difícil. Será que a mordida foi uma benção ou uma maldição, especialmente em relação à Allison, de quem Scott nunca se cansa?.</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">Mistério no Mediterrâneo</div>
+            <div class="back">Em uma incrível viagem à Europa, um policial de Nova York e sua esposa cabeleireira tentam solucionar um caso de assassinato a bordo do iate de um bilionário.</div>
+        </div>
+    </div>
+
+    <script>
+       
+        function flipCard(card) {
+            card.classList.toggle("is-flipped");
+        }
+    </script>
+
+</body>
+</html>
